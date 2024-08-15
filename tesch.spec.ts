@@ -21,5 +21,19 @@ describe("user", () => {
 
     expect(result).toBe("User gjf bought Book")
   })
+  it('v2 委托 工厂函数 来隐藏不需要的属性', () => {
+    const user = createUser("gjf")
+    const product = createProduct("Book")
+
+    const result = user.buy(product)
+
+    expect(result).toBe("User gjf bought Book")
+  })
 })
 
+function createUser(name: string) {
+  return new User(name, 28, "gjfxxx@gmail.com", "shenzhen")
+}
+function createProduct(name: string) {
+  return new Product(name, 20, "nice book！")
+}
