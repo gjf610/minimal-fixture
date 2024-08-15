@@ -29,6 +29,16 @@ describe("user", () => {
 
     expect(result).toBe("User gjf bought Book")
   })
+  it('虚拟对象的方式', () => {
+    // 可读性 可维护性
+    // 测试代码也需要维护
+    const user = createUser("gjf")
+    const product = { name: "Book" } as Product
+
+    const result = user.buy(product)
+
+    expect(result).toBe("User gjf bought Book")
+  })
 })
 
 function createUser(name: string) {
