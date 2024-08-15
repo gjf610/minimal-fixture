@@ -11,5 +11,15 @@ describe("user", () => {
 
     expect(result).toBe("User gjf bought Book")
   })
+  it('should', () => {
+    // 单元测试 也是业务逻辑的用户之一
+    // 单元测试可以驱动我们设计出更好用的程序api
+    const user = new User("gjf")
+    const product = new Product("Book")
+
+    const result = user.buy(product)
+
+    expect(result).toBe("User gjf bought Book")
+  })
 })
 
